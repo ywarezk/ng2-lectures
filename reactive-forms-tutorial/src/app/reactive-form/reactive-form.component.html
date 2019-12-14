@@ -1,0 +1,68 @@
+<p>
+  reactive-form works!
+</p>
+<input type="text" name="username" [formControl]="username" />
+{{username.errors | json}}
+{{username.status}}
+
+
+<form [formGroup]="passwordForm">
+  <div class="form-group">
+    <label>
+      Password
+    </label>
+    <input class="form-control" type="password" name="password" formControlName="password" />
+  </div>
+  <div class="form-group">
+    <label>
+      Repeat password
+    </label>
+    <input class="form-control" type="password" name="repeat-password" formControlName="repeatPassword" />
+  </div>
+</form>
+
+{{passwordForm.errors | json}} <br/>
+{{passwordForm.status | json}} <br/>
+{{passwordForm.get('password').errors | json}}
+
+<h1>
+  pets form
+</h1>
+
+<form [formGroup]="petsForm">
+  <div class="form-group" *ngFor="let formControl of petsForm.get('petNames').controls; let i=index" formArrayName="petNames">
+      <label>
+        Pet name
+      </label>
+      <input type="text" class="form-control" [formControlName]="i"  />
+  </div>
+  <button (click)="addPet()">
+    add pet
+  </button>
+</form>
+{{petsForm.get('petNames').status}}
+
+<h1>
+  Combined form
+</h1>
+<form [formGroup]="combinedFroms">
+  <div class="form-group">
+    <label>
+      Username
+    </label>
+    <input type="text" class="form-control" formControlName="username" />
+  </div>
+  <div class="form-group" formGroupName="passwordRepeat">
+    <input type="password" name="password" formControlName="password" />
+    <input type="password" name="repeat" formControlName="repeatPassword" />
+  </div>
+  <div class="form-group" *ngFor="let item of combinedFroms.get('pets').controls; let i=index">
+    <label>
+      pet name
+    </label>
+    <input type="text" class="form-control" [formControl]="item" />
+  </div>
+</form>
+
+{{combinedFroms.status}}
+{{combinedFroms.errors | json}}

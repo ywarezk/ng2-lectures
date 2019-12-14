@@ -1,0 +1,9 @@
+<p>
+  child works!
+  {{title}}
+  {{stam}}
+</p>
+<input type="text" [(ngModel)]="toTest" />
+<ng-content select="[body]"></ng-content>
+  <hr/>
+  <ng-content select="[title]"></ng-content>

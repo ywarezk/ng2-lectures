@@ -1,0 +1,19 @@
+{
+  "name": "promises-observables",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^2.6.2"
+  },
+  "dependencies": {
+    "dojo": "^1.13.0",
+    "rxjs": "^5.5.6"
+  }
+}

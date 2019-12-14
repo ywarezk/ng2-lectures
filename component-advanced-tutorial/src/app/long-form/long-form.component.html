@@ -1,0 +1,34 @@
+<ng-template #formControl let-label="labelForInput">
+  <div class="form-group">
+    <label>{{label}}</label>
+    <input type="text" class="form-control"/>
+  </div>
+</ng-template>
+
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+      <form>
+        <ng-container *ngTemplateOutlet="formControl;context:{labelForInput: 'hello', modelToAttachTo: user, key: 'firstName'}" ></ng-container>
+        <div #newInputElements></div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<h1>
+  Add new inputs to the form
+</h1>
+
+<form (ngSubmit)="createNewInput()">
+  <div class="form-group">
+    <label>
+      Name of input
+    </label>
+    <input name="label" class="form-group" [(ngModel)]="createElementLabel" />
+  </div>
+  <div class="form-group">
+    <button type="submit" class="btn btn-primary"></button>
+  </div>
+</form>

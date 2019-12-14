@@ -1,0 +1,22 @@
+<form (ngSubmit)="login()">
+  <div class="control-group">
+    <label>
+      Email
+    </label>
+    <input name="email" [(ngModel)]="email" type="text" />
+  </div>
+  <div class="control-group">
+    <label>
+      Password
+    </label>
+    <input name="password" [(ngModel)]="password" type="password" />
+  </div>
+  <div class="control-group">
+    <button type="submit">
+      Login
+    </button>
+  </div>
+</form>
+<h3>
+  {{status}}
+</h3>

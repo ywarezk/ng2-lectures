@@ -1,0 +1,1 @@
+{"version":3,"file":"type-checking.js","sourceRoot":"","sources":["type-checking.ts"],"names":[],"mappings":"AAAA;;GAEG;AAGH,IAAI,QAAQ,GAAW,aAAa,CAAC;AACrC,0BAA0B;AAE1B,IAAI,QAAgB,CAAC;AACrB,QAAQ,GAAG,EAAE,CAAC;AACd,+BAA+B;AAE/B,IAAI,eAAe,GAAG,SAAS,CAAC;AAChC,iCAAiC;AAEjC,OAAO,CAAC,GAAG,CAAC,eAAe,CAAC,CAAC,CAAC,CAAC,CAAC;AAEhC,4BAA4B;AAC5B,2BAA2B"}

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>ComponentAdvancedTutorial</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+  <script>
+    class JohnBryce extends HTMLElement {
+      constructor() {
+        super();
+        var shadow = this.attachShadow({mode: 'closed'});
+        var hello = document.createElement('span');
+        hello.innerText = 'hello world';
+        shadow.appendChild(hello);
+      }
+    }
+    customElements.define('john-bryce', JohnBryce);
+  </script>
+  <app-root></app-root>
+  <john-bryce></john-bryce>
+</body>
+</html>

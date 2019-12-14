@@ -1,0 +1,117 @@
+<h1>
+  Templates
+</h1>
+
+<h3>
+  Interpolation
+</h3>
+
+<p>
+  {{1 + 10}}
+</p>
+
+<p class="{{'stam'}}" id="{{'foo-bar'}}">
+  changing the attributes
+</p>
+
+<p>
+  using property from the class
+  {{randomNumber + 20}}
+</p>
+
+<p>
+  calling a method from class {{sayHello()}}
+</p>
+
+<h2>
+  component template communication
+</h2>
+
+<h3>
+  From component to template
+</h3>
+
+<p [innerText]="'stam text'">
+
+</p>
+
+<p [innerHTML]="fromHtmlVar" [style.background-color]="colorCreator()">
+
+</p>
+
+<h3>
+  From template to component
+</h3>
+
+<button (click)="onButtonClicked($event)">
+  click me
+</button>
+
+<p (mouseover)="hoverCounter = hoverCounter + 1" >
+  {{hoverCounter}}
+</p>
+
+<h3>
+  2 way binding
+</h3>
+
+<input [(ngModel)]="twoWayExample" />
+<p>
+  {{twoWayExample}}
+</p>
+
+<input [value]="twoWayExample2" (input)="twoWayExample2 = $event.target.value" />
+<p>
+  {{twoWayExample2}}
+</p>
+
+<h2 #stamDom>
+  Parent child communication
+</h2>
+
+<jb-child [(textInput)]="childParentTwoWay" #childInstance [message]="calculatedMessage()" (visibilityButtonClicked)="printIsVisible($event, childInstance, stamDom)" ></jb-child>
+
+
+<div #whatWillIGet class="jb-child" (visibilityButtonClicked)="printIsVisible($event, whatWillIGet)"></div>
+
+<h2>
+  Two way binding in child parent: {{childParentTwoWay}}
+</h2>
+
+<h2>
+  Build-in Directives
+</h2>
+
+<h3 *ngIf="childParentTwoWay; then stamBlock; else whenTextNotTyped">
+  this will always show
+</h3>
+<ng-template #stamBlock>
+  <h1>
+    This will show after u type text
+  </h1>
+</ng-template>
+<ng-template #whenTextNotTyped>
+  <h1>
+    this will show on start
+  </h1>
+</ng-template>
+
+<h2>
+  *ngFor
+</h2>
+
+<h2>
+  mypipe
+</h2>
+
+<p>
+  {{'stam' | zigzag }}
+</p>
+
+<h2>
+  Safe navigation
+</h2>
+
+<p>
+  {{myObjectWithTitle?.title}}
+</p>
